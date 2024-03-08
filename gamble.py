@@ -16,7 +16,7 @@ while True:
     if coins <= 0:
         time.sleep(1)
         print('\nIs time to stop gambling')
-        time.sleep(1)
+        time.sleep(0.5)
         print(' or call : 1800 858 858 \n')
         time.sleep(1)
         print('         Game over        ')
@@ -37,7 +37,7 @@ while True:
         break
     if input1 == "yes" or input1 == "y":
         print('His Turn\n')
-        for char in ['.', '..', '...']:
+        for char in ['.', '..', '...','....','.....','......']:
             print(f'\rRolling the dices{char}', end='')
             time.sleep(0.5)
         print('\nHis Dices is ready')
@@ -46,7 +46,7 @@ while True:
         t2=b1+b2
         print('---------------------------------------')
         print('Your Turn\n')
-        for char in ['.', '..', '...']:
+        for char in ['.', '..', '...','....','.....','......']:
             print(f'\rRolling the dices{char}', end='')
             time.sleep(0.5)
         print('\n---------------------------------------')
