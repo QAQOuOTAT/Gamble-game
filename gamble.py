@@ -91,7 +91,7 @@ while True:
             elif t1<t2:
                 print('\n- (Yours)',t1,' < ',t2,'(His) -')
                 print('Unlucky,Now you lose $',input3,'\n')
-        if input3==0:
+        if input3<=0:
             print('---------------------------------------')
             print('You did not join this round')
             time.sleep(1)
