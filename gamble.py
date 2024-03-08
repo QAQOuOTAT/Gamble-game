@@ -25,9 +25,12 @@ while True:
     input1=input("Roll the dices?(yes or no)  ")
     print('---------------------------------------')
     if input1 == 'no' or input1 == 'n' :
+        time.sleep(1)
         print('                 Exit                  ')
         time.sleep(1)
         print('              Good choose              ')
+        time.sleep(1)
+        print('            Thx for playing            ')
         print('=======================================')
         break
     if input1 == "yes" or input1 == "y":
@@ -78,7 +81,7 @@ while True:
             if t1>t2:
                 coins=coins+2*(input3)
                 print('\n- (Yours)',t1,' > ',t2,'(His) -')
-                print('Lucky,Now you win $',input3,'\n')
+                print('Lucky,Now you win $',2*(input3),'\n')
             elif t1==t2:
                 coins=coins+input3
                 print('\n- (Yours)',t1,' = ',t2,'(His) -')
