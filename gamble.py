@@ -18,6 +18,8 @@ while True:
         print('\nIs time to stop gambling')
         time.sleep(1)
         print(' or call : 1800 858 858 \n')
+        time.sleep(1)
+        print('         Game over        ')
         print('=======================================')
         break
     elif coins >= 100:
