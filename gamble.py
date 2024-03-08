@@ -24,9 +24,10 @@ while True:
         break
     elif coins >= 100:
         print('\n High-risk , High-reward \n')
-    input1=input("Roll the dices?(yes or no)  ")
+    print('\n-0 = yes and 1 = no-\n')
+    input1=input("Roll the dices?  ")
     print('---------------------------------------')
-    if input1 == 'no' or input1 == 'n' :
+    if input1 == '1':
         time.sleep(1)
         print('                 Exit                  ')
         time.sleep(1)
@@ -35,9 +36,9 @@ while True:
         print('            Thx for playing            ')
         print('=======================================')
         break
-    if input1 == "yes" or input1 == "y":
+    if input1 == "0":
         print('His Turn\n')
-        for char in ['.', '..', '...','....','.....','......']:
+        for char in ['','.', '..', '...']:
             print(f'\rRolling the dices{char}', end='')
             time.sleep(0.5)
         print('\nHis Dices is ready')
@@ -46,7 +47,7 @@ while True:
         t2=b1+b2
         print('---------------------------------------')
         print('Your Turn\n')
-        for char in ['.', '..', '...','....','.....','......']:
+        for char in ['','.', '..', '...']:
             print(f'\rRolling the dices{char}', end='')
             time.sleep(0.5)
         print('\n---------------------------------------')
