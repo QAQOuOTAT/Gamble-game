@@ -14,9 +14,12 @@ while True:
     print('You have : $',coins)
     time.sleep(1)
     if coins <= 0:
+        time.sleep(1)
         print('\nIs time to stop gambling')
         time.sleep(1)
         print(' or call : 1800 858 858 \n')
+        print('=======================================')
+        break
     elif coins >= 100:
         print('\n High-risk , High-reward \n')
     input1=input("Roll the dices?(yes or no)  ")
@@ -53,12 +56,12 @@ while True:
         time.sleep(1)
         print('You have : $',coins)
         time.sleep(1)
-        input2=input("Gamble?(yes or no)  ")
+        print('\n- High-risk High-reward -\n')
         time.sleep(1)
-        if input2 == "yes" or input2 == "y":
-            print('\n- High-risk High-reward -\n')
-            time.sleep(1)
-            input3=int(input('How much will you cost : '))
+        input3=int(input('How much will you cost : '))
+        if input3>0: 
+            if input3>coins:
+                input3=coins
             print('---------------------------------------')
             time.sleep(1)
             print('You pay $',input3,',Good Luck')
@@ -83,9 +86,9 @@ while True:
             elif t1<t2:
                 print('- (Yours)',t1,' < ',t2,'(His) -')
                 print('Unlucky,Now you lose $',input3)
-        if input2 == "no" or input2 == "n":
+        if input3==0:
             print('---------------------------------------')
-            print('You did not play this round')
+            print('You did not join this round')
             time.sleep(1)
             print('        Good choose        ')
             time.sleep(1)
