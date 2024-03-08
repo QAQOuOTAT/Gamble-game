@@ -31,7 +31,7 @@ while True:
         print('=======================================')
         break
     if input1 == "yes" or input1 == "y":
-        print('His Turn')
+        print('His Turn\n')
         for char in ['.', '..', '...']:
             print(f'\rRolling the dices{char}', end='')
             time.sleep(0.5)
@@ -40,7 +40,7 @@ while True:
         b2=random.randint(min, max)
         t2=b1+b2
         print('---------------------------------------')
-        print('Your Turn')
+        print('Your Turn\n')
         for char in ['.', '..', '...']:
             print(f'\rRolling the dices{char}', end='')
             time.sleep(0.5)
@@ -77,21 +77,29 @@ while True:
             time.sleep(1)
             if t1>t2:
                 coins=coins+2*(input3)
-                print('- (Yours)',t1,' > ',t2,'(His) -')
-                print('Lucky,Now you win $',input3)
+                print('\n- (Yours)',t1,' > ',t2,'(His) -')
+                print('Lucky,Now you win $',input3,'\n')
             elif t1==t2:
                 coins=coins+input3
-                print('- (Yours)',t1,' = ',t2,'(His) -')
-                print("Now you haven't lose any coins")
+                print('\n- (Yours)',t1,' = ',t2,'(His) -')
+                print("You haven't lose any coins\n")
             elif t1<t2:
-                print('- (Yours)',t1,' < ',t2,'(His) -')
-                print('Unlucky,Now you lose $',input3)
+                print('\n- (Yours)',t1,' < ',t2,'(His) -')
+                print('Unlucky,Now you lose $',input3,'\n')
         if input3==0:
             print('---------------------------------------')
             print('You did not join this round')
             time.sleep(1)
-            print('        Good choose        ')
+            print('\nHis Dice')
+            time.sleep(1)
+            print('Dice1 : ',b1,'Dice2 :',b2,', Total = ',t2)
+            if t2>t1:
+                time.sleep(1)
+                print('\n       Good choose         ')
+            elif t1==t2 or t1>t2:
+                time.sleep(1)
+                print('\n       Good choose?        ')
             time.sleep(1)
             print("You haven't lose any coins ")
-        print('---------------------------------------')
+        print('=======================================')
     
