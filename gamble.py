@@ -46,7 +46,7 @@ while True:
         for char in ['','.', '..', '...']:
             print(f'\rRolling the dices{char}', end='')
             time.sleep(0.5)
-        print('\nHis Dices is ready')
+        print('\n\aHis Dices is ready')
         b1=random.randint(min, max)
         b2=random.randint(min, max)
         b3=random.randint(min, max)
@@ -62,7 +62,7 @@ while True:
         a3=random.randint(min, max)
         t1=a1+a2+a3
         time.sleep(1)
-        print('Your Dice')
+        print('Your Dice\a')
         time.sleep(1)
         print('Dice1 :',a1,',Dice2 :',a2,',Dice3 :',a3,', Total = ',t1)
         print('---------------------------------------')
