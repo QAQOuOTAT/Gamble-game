@@ -6,6 +6,7 @@ Created on Fri Mar  8 23:34:53 2024
 """
 import time
 import random
+import os
 min = 1
 max = 6
 coins=int(10)
@@ -21,6 +22,8 @@ while True:
         time.sleep(1)
         print('         Game over        ')
         print('=======================================')
+        time.sleep(5)
+        os.system('cls')
         break
     elif coins >= 100:
         print('\n High-risk , High-reward \n')
@@ -35,6 +38,8 @@ while True:
         time.sleep(1)
         print('            Thx for playing            ')
         print('=======================================')
+        time.sleep(5)
+        os.system('cls')
         break
     if input1 == "0":
         print('His Turn\n')
@@ -68,6 +73,9 @@ while True:
         if input3>0: 
             if input3>coins:
                 input3=coins
+            if input3==coins:
+                time.sleep(1)
+                print('\n-How dare You ALL IN-\n')
             print('---------------------------------------')
             time.sleep(1)
             print('You pay $',input3,',Good Luck')
