@@ -16,6 +16,8 @@ line2='------------------------------------------'
 listA=('| 大 | 兩個骰子相同 | 小 | => | 4 | 5 | 6 |')
 listB=('| 大 | 三個骰子相同 | 小 | => | 1 | 2 | 3 |')  
 print(line1)
+print('              Type x to Exit             ')
+print(line1)
 print('    買 大    : 1 賠   1  ')
 print('    買 小    : 1 賠   1  ')
 print(' 兩個骰子相同 : 1 賠   5  ')
@@ -104,18 +106,18 @@ while True:
             print('Dice1 :',a1,',Dice2 :',a2,',Dice3 :',a3,', Total = ',t1)
             if t1>11:
                 time.sleep(1)
-                print(t1,' > ','11')
+                print('          - ',t1,' > ','11 -')
                 time.sleep(1)
                 coins=coins+2*(input2)
                 print('Lucky,you win $',2*(input2))
             elif t1==11:
                 time.sleep(1)
-                print(t1,' = ','11')
+                print('          - ',t1,' = ','11 -')
                 time.sleep(1)
                 coins=coins+2*(input2)
                 print('Lucky,you win $',2*(input2))
             else:
-                print(t1,' < ','11')
+                print('          - ',t1,' < ','11 -')
                 print('Unlucky,Now you lose $',input2)
         if input1 == '3' or input1 == '6':
             time.sleep(1)
@@ -138,18 +140,18 @@ while True:
             print('Dice1 :',a1,',Dice2 :',a2,',Dice3 :',a3,', Total = ',t1)
             if t1<10:
                 time.sleep(1)
-                print(t1,' < ','10')
+                print('          - ',t1,' < ','10 -')
                 time.sleep(1)
                 coins=coins+2*(input2)
                 print('Lucky,you win $',2*(input2))
             elif t1==10:
                 time.sleep(1)
-                print(t1,' = ','10')
+                print('          - ',t1,' = ','10 -')
                 time.sleep(1)
                 coins=coins+2*(input2)
                 print('Lucky,you win $',2*(input2))
             else:
-                print(t1,' < ','11')
+                print('          - ',t1,' < ','10 -')
                 print('Unlucky,Now you lose $',input2)
         if input1 == '5':
             time.sleep(1)
@@ -172,12 +174,12 @@ while True:
             print('Dice1 :',a1,',Dice2 :',a2,',Dice3 :',a3,', Total = ',t1)
             if a1==a2 or a1==a3 or a2==a3:
                 time.sleep(1)
-                print('兩個骰子相同')
+                print('    - 兩個骰子相同 -    ')
                 time.sleep(1)
                 coins=coins+6*(input2)
                 print('Lucky,you win $',6*(input2))
             else:
-                print('兩個骰子不相同')
+                print('    - 兩個骰子不相同 -    ')
                 print('Unlucky,Now you lose $',input2)
         if input1 == '2':
             time.sleep(1)
@@ -200,10 +202,10 @@ while True:
             print('Dice1 :',a1,',Dice2 :',a2,',Dice3 :',a3,', Total = ',t1)
             if a1==a2==a3:
                 time.sleep(1)
-                print('三個骰子相同')
+                print('    - 三個骰子相同 -    ')
                 time.sleep(1)
                 coins=coins+151*(input2)
                 print('Lucky,you win $',151*(input2))
             else:
-                print('三個骰子不相同')
+                print('    - 三個骰子不相同-    ')
                 print('Unlucky,Now you lose $',input2)
