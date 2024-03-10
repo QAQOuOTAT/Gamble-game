@@ -55,6 +55,22 @@ while True:
         time.sleep(0.5)
     print('\n\a- Dices are ready -')
     print(line2)
+    input1=input(' 買定離手 : ')
+    if input1 == 'x':
+        time.sleep(1)
+        print('==========================================')
+        time.sleep(1)
+        print('        You wiln ',coins,' this time         ')
+        time.sleep(1)
+        print('                  Exit                    ')
+        time.sleep(1)
+        print('               Good choose                ')
+        time.sleep(1)
+        print('             Thx for playing              ')
+        print('==========================================')
+        time.sleep(10)
+        os.system('cls')
+        break
     input3=input(' 下注金額 : $')
     if input3 == 'x':
         time.sleep(1)
