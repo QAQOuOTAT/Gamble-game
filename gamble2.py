@@ -100,22 +100,6 @@ while True:
         time.sleep(1)
         print("You haven't lose any coins ")
     else:
-        input1=input(' 買定離手 : ')
-        if input1 == 'x':
-            time.sleep(1)
-            print('==========================================')
-            time.sleep(1)
-            print('        You wiln ',coins,' this time         ')
-            time.sleep(1)
-            print('                  Exit                    ')
-            time.sleep(1)
-            print('               Good choose                ')
-            time.sleep(1)
-            print('             Thx for playing              ')
-            print('==========================================')
-            time.sleep(10)
-            os.system('cls')
-            break
         if input1 == '1' or input1 == '4':
             time.sleep(1)
             print('- 買大 -')
