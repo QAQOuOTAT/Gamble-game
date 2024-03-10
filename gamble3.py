@@ -114,6 +114,8 @@ while True:
                     time.sleep(1)
                     print(line2)
                     break
+            if input1 in playlist:
+                playlist[input1]=playlist[input1]+input2
             if input1 not in numlist:
                 print('Please input correctly')
     time.sleep(1)
