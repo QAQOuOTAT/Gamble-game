@@ -13,6 +13,7 @@ max = 6
 coins=float(10)
 line1='=========================================='
 line2='------------------------------------------'
+numlist=['4','5','6','2']
 listA=('| 大 | 兩個骰子相同 | 小 | => | 4 | 5 | 6 |')
 listB=('| 大 | 三個骰子相同 | 小 | => | 4 | 2 | 6 |') 
 print(line1)
@@ -24,6 +25,7 @@ print(' 兩個骰子相同 : 1 賠   5  ')
 print(' 三個骰子相同 : 1 賠  150  ')
 time.sleep(0.5)
 while True:
+    playlist=dict()
     print(line1)
     print(listA)
     print(listB)
@@ -63,7 +65,7 @@ while True:
         time.sleep(1)
         print('==========================================')
         time.sleep(1)
-        print('        You wiln ',coins,' this time         ')
+        print('        You win ',coins,' this time         ')
         time.sleep(1)
         print('                  Exit                    ')
         time.sleep(1)
@@ -88,50 +90,54 @@ while True:
     if j == '0':
         time.sleep(1)
         print('- Type x to finish -')
-        playlist=dict()
         while True:
             print(line2)
             input1=input(' 買定離手 :  ')
             if input1 =='x':
                 print(line2)
                 break
-            input3=input(' 下注金額 : $')
-            if input3 =='x':
-                print(line2)
-                break
-            input2=float(input3)
-            if input2>coins:
-                input2=coins
-            playlist[input1]=input2
-            coins=coins-input2
-            print('You have $',coins)
-            if coins<=0:
-                print(line2)
-                time.sleep(1)
-                print("You don't have enough money")
-                time.sleep(1)
-                print(line2)
-                break
+            if input1 in numlist:
+                input3=input(' 下注金額 : $')
+                if input3 =='x':
+                    print(line2)
+                    break
+                input2=float(input3)
+                if input2>coins:
+                    input2=coins
+                playlist[input1]=input2
+                coins=coins-input2
+                print('You have $',coins)
+                if coins<=0:
+                    print(line2)
+                    time.sleep(1)
+                    print("You don't have enough money")
+                    time.sleep(1)
+                    print(line2)
+                    break
+            if input1 not in numlist:
+                print('Please input correctly')
+    time.sleep(1)
+    for char in ['','.', '..', '...']:
+        print(f'\rLoading{char}', end='')
+        time.sleep(0.5)
+    print('\n')
+    print('Dice1 :',a1,',Dice2 :',a2,',Dice3 :',a3,', Total = ',t1)
+    print(line2)
     if '4' in playlist:
         time.sleep(1)
         print('\n- 買大 -\n')
         print(line2)
-        time.sleep(1)
-        for char in ['','.', '..', '...']:
-            print(f'\rLoading{char}', end='')
-            time.sleep(0.5)
-        print('Dice1 :',a1,',Dice2 :',a2,',Dice3 :',a3,', Total = ',t1)
         if t1>11:
             time.sleep(1)
             print('          - ',t1,' > ','11 -')
             time.sleep(1)
-            coins=coins+2*(input2)
+            coins=coins+2*(playlist['4'])
             print('Lucky,you win $',2*(playlist['4']))
         elif t1==11:
             time.sleep(1)
             print('          - ',t1,' = ','11 -')
             time.sleep(1)
-            coins=coins+2*(input2)
+            coins=coins+2*(playlist['4'])
             print('Lucky,you win $',2*(playlist['4']))
         else:
             print('          - ',t1,' < ','11 -')
@@ -141,64 +147,49 @@ while True:
         time.sleep(1)
         print('\n- 買小 -\n')
         print(line2)
-        time.sleep(1)
-        for char in ['','.', '..', '...']:
-            print(f'\rLoading{char}', end='')
-            time.sleep(0.5)
-        print('Dice1 :',a1,',Dice2 :',a2,',Dice3 :',a3,', Total = ',t1)
         if t1<10:
             time.sleep(1)
             print('          - ',t1,' < ','10 -')
             time.sleep(1)
-            coins=coins+2*(input2)
-            print('Lucky,you win $',2*(playlist['4']))
+            coins=coins+2*(playlist['6'])
+            print('Lucky,you win $',2*(playlist['6']))
         elif t1==10:
             time.sleep(1)
             print('          - ',t1,' = ','10 -')
             time.sleep(1)
-            coins=coins+2*(input2)
-            print('Lucky,you win $',2*(playlist['4']))
+            coins=coins+2*(playlist['6'])
+            print('Lucky,you win $',2*(playlist['6']))
         else:
             print('          - ',t1,' > ','10 -')
-            print('Unlucky,Now you lose $',playlist['4'])
+            print('Unlucky,Now you lose $',playlist['6'])
         print(line2)
     if '5' in playlist:
         time.sleep(1)
         print('\n- 兩個骰子相同 -\n')
         print(line2)
-        time.sleep(1)
-        for char in ['','.', '..', '...']:
-            print(f'\rLoading{char}', end='')
-            time.sleep(0.5)
-        print('Dice1 :',a1,',Dice2 :',a2,',Dice3 :',a3,', Total = ',t1)
         if a1==a2 or a1==a3 or a2==a3:
             time.sleep(1)
             print('    - 兩個骰子相同 -    ')
             time.sleep(1)
-            coins=coins+6*(input2)
-            print('Lucky,you win $',6*(input2))
+            coins=coins+6*(playlist['5'])
+            print('Lucky,you win $',6*(playlist['5']))
         else:
             print('    - 兩個骰子不相同 -    ')
-            print('Unlucky,Now you lose $',input2)
+            print('Unlucky,Now you lose $',playlist['5'])
         print(line2)
     if '2' in playlist:
         time.sleep(1)
         print('\n- 三個骰子相同 -\n')
         print(line2)
-        time.sleep(1)
-        for char in ['','.', '..', '...']:
-            print(f'\rLoading{char}', end='')
-            time.sleep(0.5)
-        print('Dice1 :',a1,',Dice2 :',a2,',Dice3 :',a3,', Total = ',t1)
         if a1==a2==a3:
             time.sleep(1)
             print('    - 三個骰子相同 -    ')
             time.sleep(1)
-            coins=coins+151*(input2)
-            print('Lucky,you win $',151*(input2))
+            coins=coins+151*(playlist['2'])
+            print('Lucky,you win $',151*(playlist['2']))
         else:
             print('    - 三個骰子不相同-    ')
-            print('Unlucky,Now you lose $',input2)
+            print('Unlucky,Now you lose $',playlist['2'])
         print(line2)
     time.sleep(1)
     print(f'\rLoading{char}', end='')

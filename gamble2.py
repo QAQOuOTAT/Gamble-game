@@ -60,7 +60,7 @@ while True:
         time.sleep(1)
         print('==========================================')
         time.sleep(1)
-        print('        You wiln ',coins,' this time         ')
+        print('        You win ',coins,' this time         ')
         time.sleep(1)
         print('                  Exit                    ')
         time.sleep(1)
