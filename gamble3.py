@@ -103,6 +103,9 @@ while True:
                         print(line2)
                         break
                     input2=float(input3)
+                    if input2<0:
+                        input2=0
+                        print("Please you didn't place any bet")
                     if input2>coins:
                         input2=coins
                     if input1 in playlist:
