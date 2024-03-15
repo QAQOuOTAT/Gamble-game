@@ -44,8 +44,15 @@ while True:
         time.sleep(5)
         os.system('cls')
         break
+    if coins >= 1000:
+        print('- Time To The Max Level -')
+        time.sleep(1)
+    elif coins >= 200:
+        print('- Time To The Next Level -')
+        time.sleep(1)
     elif coins >= 100:
         print('- High-risk , High-reward -')
+        time.sleep(1)
     a1=random.randint(min, max)
     a2=random.randint(min, max)
     a3=random.randint(min, max)
@@ -94,6 +101,10 @@ while True:
             if input1 =='x':
                 print(line2)
                 break
+            if coins >= 1000:
+                print('- Your bet must be >',coins//10,' -')
+            elif coins >= 200:
+                print('- Your bet must be >',coins//100,' -')
             if input1 in numlist:
                 input3=input(' 下注金額 : $')
                 try:
@@ -106,10 +117,41 @@ while True:
                         print("You didn't place any bet")
                     if input2>coins:
                         input2=coins
-                    if input1 in playlist:
-                        playlist[input1]=playlist[input1]+input2
+                    if coins >= 1000:
+                        print('You must pay more')
+                        if input2<=0:
+                            input2=0
+                            print("You didn't place any bet")
+                        elif input2>coins:
+                            input2=coins
+                        else:
+                            if input2<(coins//10):        
+                                input2=coins//10
+                                print('you have to pay at least',coins//10)
+                        if input1 in playlist:
+                            playlist[input1]=playlist[input1]+input2
+                        else:
+                            playlist[input1]=input2
+                    elif coins >= 200 and coins<1000:
+                        print('You must pay more')
+                        if input2<=0:
+                            input2=0
+                            print("You didn't place any bet")
+                        elif input2>coins:
+                            input2=coins
+                        else:
+                            if input2<(coins//100):        
+                                input2=coins//100
+                                print('you have to pay at least',coins//100)
+                        if input1 in playlist:
+                            playlist[input1]=playlist[input1]+input2
+                        else:
+                            playlist[input1]=input2
                     else:
-                        playlist[input1]=input2
+                        if input1 in playlist:
+                            playlist[input1]=playlist[input1]+input2
+                        else:
+                            playlist[input1]=input2
                     coins=coins-input2
                     print('You have $',coins)
                     if coins<=0:
